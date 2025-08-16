@@ -1,5 +1,5 @@
 {% set name = "docstrfmt" %}
-{% set version = "1.10.0" %}
+{% set version = "1.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/docstrfmt-{{ version }}.tar.gz
-  sha256: 9da96e71552937f4b49ae2d6ab1c118ffa8ad6968082e6b8fd978b01d1bc0066
+  sha256: 37500c8086770294f265187c375c5c35a91a334d2c0b4f764aeace069d4ed501
 
 build:
   number: 0
