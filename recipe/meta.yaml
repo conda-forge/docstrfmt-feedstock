@@ -1,5 +1,5 @@
 {% set name = "docstrfmt" %}
-{% set version = "1.11.0" %}
+{% set version = "1.11.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/docstrfmt-{{ version }}.tar.gz
-  sha256: 37500c8086770294f265187c375c5c35a91a334d2c0b4f764aeace069d4ed501
+  sha256: d41e19d6c5d524cc7f8ff6cbfecb8762d77e696b9fe4f5057269051fb966fc80
 
 build:
   number: 0
@@ -24,15 +24,16 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - black ==24.*
-    - click ==8.*
-    - docutils ==0.20.*
-    - libcst ==1.*
-    - platformdirs ==4.*
-    - sphinx >=7,<9
-    - tabulate ==0.9.*
-    - toml ==0.10.*
-    - aiohttp ==3.*
+    - black >=24
+    - click >=8
+    - docutils >=0.20
+    - libcst >=1
+    - platformdirs >=4
+    - roman
+    - sphinx >=7
+    - tabulate >=0.9
+    - toml >=0.10
+    - aiohttp >=3
 
 test:
   imports:
