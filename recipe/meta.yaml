@@ -35,7 +35,8 @@ requirements:
     - tabulate >=0.9
     - toml >=0.10
     - aiohttp >=3
-    - types-docutils =0.22.3.20251115.*
+    - docutils-stubs 0.0.22.*
+    - types-docutils 0.22.3.20251115.*
 
 test:
   imports:
