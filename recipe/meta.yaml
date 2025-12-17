@@ -26,6 +26,7 @@ requirements:
     - python >={{ python_min }}
     - black >=24
     - click >=8
+    - coverage >=7.11
     - docutils >=0.21
     - libcst >=1
     - platformdirs >=4
