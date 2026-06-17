@@ -1,5 +1,5 @@
 {% set name = "docstrfmt" %}
-{% set version = "2.0.2" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/docstrfmt-{{ version }}.tar.gz
-  sha256: 086e74b03c337c9a932b2f8216aa8c93bb6576b525edfb5d754b6bac841d4166
+  sha256: 28da1242a933468c6aa11edb0b4752521388b990b945300af5b8fc1ccf939290
 
 build:
   number: 0
@@ -36,7 +36,7 @@ requirements:
     - toml >=0.10
     - aiohttp >=3
     - docutils-stubs 0.0.22.*
-    - types-docutils 0.22.3.20251115.*
+    - types-docutils 0.22.3.20260518.*
 
 test:
   imports:
