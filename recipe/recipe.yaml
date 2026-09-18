@@ -1,0 +1,66 @@
+schema_version: 1
+
+context:
+  name: docstrfmt
+  version: "2.2.1"
+
+package:
+  name: docstrfmt
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/docstrfmt-${{ version }}.tar.gz
+  sha256: 9f35b62e746962efe32f7af27b3bf69e104a4e69827a49a9f488da770271bd0e
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - docstrfmt = docstrfmt.main:main
+      - docstrfmtd = docstrfmt.server:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - flit-core >=3.4,<5
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - black >=24
+    - click >=8
+    - coverage >=7.11
+    - docutils >=0.21
+    - docutils-stubs 0.0.22.*
+    - libcst >=1
+    - platformdirs >=4
+    - roman
+    - sphinx >=7
+    - tabulate >=0.10
+    - tomli >=0.10
+    - types-docutils 0.22.3.20260724.*
+    - aiohttp >=3  # the "d" extra, required by the docstrfmtd entry point
+
+tests:
+  - python:
+      imports:
+        - docstrfmt
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - script:
+      - docstrfmt --help
+      - docstrfmtd --help
+
+about:
+  summary: "docstrfmt: A formatter for Sphinx flavored reStructuredText."
+  license: MIT
+  license_file: LICENSE.txt
+  homepage: https://pypi.org/project/docstrfmt
+  repository: https://github.com/LilSpazJoekp/docstrfmt
+
+extra:
+  recipe-maintainers:
+    - anjos
