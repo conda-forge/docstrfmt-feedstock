@@ -3,10 +3,9 @@ schema_version: 1
 context:
   name: docstrfmt
   version: "2.2.1"
-  python_min: "3.10"
 
 package:
-  name: ${{ name|lower }}
+  name: docstrfmt
   version: ${{ version }}
 
 source:
@@ -48,7 +47,9 @@ tests:
       imports:
         - docstrfmt
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - script:
       - docstrfmt --help
       - docstrfmtd --help
